@@ -69,8 +69,9 @@ public class App {
     //todo Task 4
     public void printRhombus(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("h: c: ");
+        System.out.print("h: ");
         int height = scanner.nextInt();
+        System.out.print("c:  ");
         String userinput = scanner.next();
         char letter = userinput.charAt(0);
         int spaces = height / 2;
@@ -126,8 +127,8 @@ public class App {
         double average = 0.0;
 
         do {
-            userinput = scanner.nextInt();
             System.out.print("Mark " + (counter+1) + ": ");
+            userinput = scanner.nextInt();
             if (userinput == 0) {
                 break;
             }else if (userinput > 5) {
@@ -152,6 +153,7 @@ public class App {
     public void happyNumbers(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("n: ");
+        int userinput = scanner.nextInt();
         int sadNumber1 = 4;
         int sadNumber2 = 16;
         int sadNumber3 = 37;
@@ -160,7 +162,6 @@ public class App {
         int sadNumber6 = 145;
         int sadNumber7 = 42;
         int sadNumber8 = 20;
-        int userinput = scanner.nextInt();
         int number = userinput;
         int calc = 0;
 
