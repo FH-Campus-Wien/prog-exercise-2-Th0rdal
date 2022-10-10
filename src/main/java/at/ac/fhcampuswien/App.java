@@ -71,7 +71,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.print("h: ");
         int height = scanner.nextInt();
-        System.out.print("c:  ");
+        System.out.print("c: ");
         String userinput = scanner.next();
         char letter = userinput.charAt(0);
         int spaces = height / 2;
