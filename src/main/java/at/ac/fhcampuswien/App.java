@@ -7,25 +7,25 @@ public class App {
     //todo Task 1
     public void largestNumber(){
         Scanner scanner = new Scanner(System.in);
-        double biggest = 0.0;
-        int counter = 1;
-        String outputString = "Number "+counter+":";
+        double dBiggest = 0.0;
+        int iCounter = 1;
+        String sOutput = "Number "+iCounter+":";
         do {
-            outputString = "Number "+counter+": ";
-            System.out.print(outputString);
-            double userinput = scanner.nextDouble();
-            counter = counter + 1;
-            if (userinput <= 0.0) {
+            sOutput = "Number "+iCounter+": ";
+            System.out.print(sOutput);
+            double dUserinput = scanner.nextDouble();
+            iCounter = iCounter + 1;
+            if (dUserinput <= 0.0) {
                 break;
-            } else if (userinput > biggest) {
-                biggest = userinput;
+            } else if (dUserinput > dBiggest) {
+                dBiggest = dUserinput;
             }
         }while (true);
-        if (biggest <= 0.0) {
+        if (dBiggest <= 0.0) {
             System.out.println("No number entered.");
             return;
         }
-        System.out.printf("The largest number is %.2f",biggest);
+        System.out.printf("The largest number is %.2f",dBiggest);
         System.out.println("");
     }
 
@@ -33,19 +33,19 @@ public class App {
     public void stairs(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("n: ");
-        int userinput = scanner.nextInt();
-        int counter = 1;
+        int iUserinput = scanner.nextInt();
+        int iCounter = 1;
 
-        if (userinput <= 0) {
+        if (iUserinput <= 0) {
             System.out.println("Invalid number!");
             return;
         }
 
-        for (int i = 0; i < userinput; i++) {
+        for (int i = 0; i < iUserinput; i++) {
             for (int j = 0; j <= i; j++) {
-                System.out.print(counter);
+                System.out.print(iCounter);
                 System.out.print(" ");
-                counter = counter + 1;
+                iCounter = iCounter + 1;
             }
             System.out.println("");
         }
@@ -53,15 +53,15 @@ public class App {
 
     //todo Task 3
     public void printPyramid(){
-        int space = 5;
+        int iSpace = 5;
         for (int i = 0; i < 6; i++){
-            for (int j = 0; j < space; j++) {
+            for (int j = 0; j < iSpace; j++) {
                 System.out.print(" ");
             }
             for (int j = 0; j < (i*2)+1; j++) {
                 System.out.print("*");
             }
-            space = space - 1;
+            iSpace = iSpace - 1;
             System.out.println("");
         }
     }
@@ -70,48 +70,48 @@ public class App {
     public void printRhombus(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("h: ");
-        int height = scanner.nextInt();
+        int iHeight = scanner.nextInt();
         System.out.print("c: ");
-        String userinput = scanner.next();
-        char letter = userinput.charAt(0);
-        int spaces = height / 2;
-        int temp = 0;
+        String sUserinput = scanner.next();
+        char cLetter = sUserinput.charAt(0);
+        int iSpace = iHeight / 2;
+        int iTemp = 0;
 
-        if (height % 2 == 0) {
+        if (iHeight % 2 == 0) { //remove invalid heights
             System.out.println("Invalid number!");
             return;
         }
-        for (int i = 0; i < height/2; i++) {
-            for (int j = 0; j < spaces; j++) {
+        for (int i = 0; i < iHeight/2; i++) { //pyramid
+            for (int j = 0; j < iSpace; j++) {  //spaces
                 System.out.print(" ");
             }
-            for (int j = i; j >= 0; j--) {
-                temp = (int)letter-j;
-                System.out.print((char) temp);
+            for (int j = i; j >= 0; j--) { //char left of the middle
+                iTemp = (int)cLetter-j;
+                System.out.print((char) iTemp);
             }
-            for (int j = 1; j <= i; j++) {
-                temp = (int)letter-j;
-                System.out.print((char)(temp));
+            for (int j = 1; j <= i; j++) { //char right of the middle
+                iTemp = (int)cLetter-j;
+                System.out.print((char)(iTemp));
             }
             System.out.println("");
-            spaces = spaces - 1;
+            iSpace = iSpace - 1;
         }
 
-        spaces = 0;
-        for (int i = height/2; i >= 0; i--) {
-            for (int j = 0; j < spaces; j++) {
+        iSpace = 0;
+        for (int i = iHeight/2; i >= 0; i--) {  //reverse pyramide
+            for (int j = 0; j < iSpace; j++) {  //spaces
                 System.out.print(" ");
             }
-            for (int j = i; j >= 0; j--) {
-                temp = (int)letter-j;
-                System.out.print((char)temp);
+            for (int j = i; j >= 0; j--) {  //char left of the middle
+                iTemp = (int)cLetter-j;
+                System.out.print((char)iTemp);
             }
-            for (int j = 1; j <= i; j++){
-                temp = (int)letter-j;
-                System.out.print((char)temp);
+            for (int j = 1; j <= i; j++){   //char right of the middle
+                iTemp = (int)cLetter-j;
+                System.out.print((char)iTemp);
             }
             System.out.println("");
-            spaces = spaces + 1;
+            iSpace = iSpace + 1;
         }
 
 
@@ -153,28 +153,21 @@ public class App {
     public void happyNumbers(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("n: ");
-        int userinput = scanner.nextInt();
-        int sadNumber1 = 4;
-        int sadNumber2 = 16;
-        int sadNumber3 = 37;
-        int sadNumber4 = 58;
-        int sadNumber5 = 89;
-        int sadNumber6 = 145;
-        int sadNumber7 = 42;
-        int sadNumber8 = 20;
-        int number = userinput;
-        int calc = 0;
+        int iUserinput = scanner.nextInt();
+        int iSadNumber = 4;
+        int iNumber = iUserinput;
+        int iCalc = 0;
 
-        int temp = 0;
-        while (calc != 1) {
-            calc = 0;
-            while (number != 0) {
-                temp = number % 10;
-                calc = calc + (temp*temp);
-                number = number/10;
+        int iTemp = 0;
+        while (iCalc != 1) {
+            iCalc = 0;
+            while (iNumber != 0) {
+                iTemp = iNumber % 10;
+                iCalc = iCalc + (iTemp*iTemp);
+                iNumber = iNumber/10;
             }
-            number = calc;
-            if (calc == sadNumber1 || calc == sadNumber2 || calc == sadNumber3 || calc == sadNumber4 || calc == sadNumber5 || calc == sadNumber6 || calc == sadNumber7 || calc == sadNumber8) {
+            iNumber = iCalc;
+            if (iCalc == iSadNumber) {
                 System.out.println("Sad number!");
                 return;
             }
